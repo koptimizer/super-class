@@ -3,7 +3,7 @@
 
 ## Built-in function of Python
 - [dateTime]()
-- [egular expression]()
+- [Regular expression]()
 
 ## Data structure
 - [Numpy]()
