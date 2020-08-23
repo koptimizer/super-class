@@ -2,20 +2,20 @@
 개발 및 분석에서의 재사용을 위한 베이스라인 및 유틸코드 모음
 
 ## Built-in function of Python
-- [dateTime]()
-- [Regular expression]()
+- [dateTime](https://github.com/koptimizer/super-class/blob/master/function/dateTime.md)
+- [Regular expression](https://github.com/koptimizer/super-class/blob/master/function/RE.md)
 
 ## Data structure
-- [Numpy]()
-- [Pandas]()
-- [Defalut-dict]()
+- [Numpy](https://github.com/koptimizer/super-class/blob/master/dataStructure/numpy.md)
+- [Pandas](https://github.com/koptimizer/super-class/blob/master/dataStructure/pandas.md)
+- [Defalut-dict](https://github.com/koptimizer/super-class/blob/master/dataStructure/defaultDict.md)
 
 ## Data analyzing
-- [Matplotlib]()
-- [Seaborn]()
-- [Scikit-learn]()
+- [Matplotlib](https://github.com/koptimizer/super-class/blob/master/anal/plt.md)
+- [Seaborn](https://github.com/koptimizer/super-class/blob/master/anal/sns.md)
+- [Scikit-learn](https://github.com/koptimizer/super-class/blob/master/anal/sklearn.md)
 
 ## Web crawling
-- [Html requests]()
-- [BeautifulSoup4]()
-- [Selenium]()
+- [Html requests](https://github.com/koptimizer/super-class/blob/master/craw/req.md)
+- [BeautifulSoup4](https://github.com/koptimizer/super-class/blob/master/craw/bs.md)
+- [Selenium](https://github.com/koptimizer/super-class/blob/master/craw/sel.md)
