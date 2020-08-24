@@ -17,5 +17,5 @@
 
 ## Web crawling
 - [Html requests](https://github.com/koptimizer/super-class/blob/master/webCrawling/req.md)
-- [BeautifulSoup4](https://github.com/koptimizer/super-class/blob/master/webCrawling/bs.md)
+- [BeautifulSoup4](https://github.com/koptimizer/super-class/blob/master/webCrawling/bs4.md)
 - [Selenium](https://github.com/koptimizer/super-class/blob/master/webCrawling/sel.md)
