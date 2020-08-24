@@ -16,6 +16,6 @@
 - [Scikit-learn](https://github.com/koptimizer/super-class/blob/master/anal/sklearn.md)
 
 ## Web crawling
-- [Html requests](https://github.com/koptimizer/super-class/blob/master/craw/req.md)
-- [BeautifulSoup4](https://github.com/koptimizer/super-class/blob/master/craw/bs.md)
-- [Selenium](https://github.com/koptimizer/super-class/blob/master/craw/sel.md)
+- [Html requests](https://github.com/koptimizer/super-class/blob/master/webCrawling/req.md)
+- [BeautifulSoup4](https://github.com/koptimizer/super-class/blob/master/webCrawling/bs.md)
+- [Selenium](https://github.com/koptimizer/super-class/blob/master/webCrawling/sel.md)
