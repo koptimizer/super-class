@@ -20,7 +20,7 @@
 - [Selenium](https://github.com/koptimizer/super-class/blob/master/webCrawling/sel.md)
 
 ## LaTex & BiTex
-- [LaTex](https://github.com/koptimizer/super-class/blob/master/tex/tex1.tex)
+- [LaTex](https://github.com/koptimizer/super-class/tree/master/tex)
 
 ```
 function ClickConnect() { var buttons = document.querySelectorAll("colab-dialog.yes-no-dialog paper-button#cancel"); buttons.forEach(function(btn) { btn.click(); }); console.log("1분마다 자동 재연결"); document.querySelector("colab-toolbar-button#connect").click(); } setInterval(ClickConnect, 1000 * 60);
