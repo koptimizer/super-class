@@ -18,7 +18,16 @@ Set initial policy parameters $\theta$, clipping value $\epsilon$, update epochs
     }
     Save $\theta_{new}$ to population $P$ with a $p$
  }
-Set initial velocity $V$, inertia weight $w$, cognitive weight $c1$, social weight $c2$  
+Set initial velocity $V$, inertia weight $w$, cognitive weight $c1$, social weight $c2$ \\
+ \While{terminal criteria}{
+  Set $pbest$, $gbest$ by rule of PSO \\
+    \For{i = 1, 2, 3, ..., len($P$)}{
+      $r_1 = U(0, c1)$ \\
+      $r_2 = U(0, c2)$ \\
+      $V_i = w*v_i + r_1 * pbest_i + r_2 * gbest$ \\
+      $P_i = P_i + V_i$
+    }
+ }
  \caption{PPOPSO}
 \end{algorithm}
 \end{document}
