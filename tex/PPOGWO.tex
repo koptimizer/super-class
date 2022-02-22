@@ -1,0 +1,40 @@
+\title{AlgorithmTemplate}
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{fancyhdr,graphicx,amsmath,amssymb}
+\usepackage[ruled,vlined]{algorithm2e}
+\include{pythonlisting}
+\begin{document} 
+\begin{algorithm}[H]
+\SetAlgoLined
+Set initial policy parameters $\theta$, clipping value $\epsilon$, update epochs $k$, save probability, weight memory $m$ $p$\\
+ \While{terminal criteria}{
+  Collect set of partial trajectories $D$ on policy $\pi_\theta$ \\
+  Make a mini-batch buffer $B$ by $D$ \\
+    \For{i = 1, 2, 3, ..., k}{
+      Estimate advantages function $\hat{A}_t^{\pi_\theta}$ \\
+      Compute policy update using $\theta_{new} = arg\max_{\theta} L^{CLIP}(\theta)$ by taking $B$\\
+    }
+    Save $\theta_{new}$ to $m$ with a $p$
+ }
+ set population $P$ by $m$ current iteration $t = 0$, max iteration $M$ \\
+ \While{terminal criteria}{
+  Set $\alpha$, $\beta$, $\delta$ by rule of GWO \\
+  $t = t + 1$ \\
+  $a = 2 - t * ((2/M))$ \\
+    \For{i = 1, 2, 3, ..., len($P$)}{
+      \For{j = $\alpha$, $\beta$, $\delta$}{
+        $r1_j = U(0, 1)$ \\
+        $r2_j = U(0, 1)$ \\
+        $A_j = 2a * r1_j - a$ \\
+        $C_j = 2 * r2_j$ \\
+        $D_j = C_j * \alpha - P_i$ \\
+        $V_j = X_j - A_j * D_j$
+      }
+      $P_i = (V_\alpha + V_\beta + V_\delta) / 3$
+    }
+ }
+ \caption{PPOGWO}
+\end{algorithm}
+\end{document}
