@@ -1,0 +1,68 @@
+\title{AlgorithmTemplate}
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{fancyhdr,graphicx,amsmath,amssymb}
+\usepackage[ruled,vlined]{algorithm2e}
+\include{pythonlisting}
+\begin{document}
+
+\begin{algorithm}[H]
+\SetAlgoLined
+Set initial policy parameters $\theta$, clipping value $\epsilon$, update epochs $k$, save probability $p$\\
+ \While{terminal criteria}{
+  Collect set of partial trajectories $D$ on policy $\pi_\theta$ \\
+  Make a mini-batch buffer $B$ by $D$ \\
+    \For{i = 1, 2, 3, ..., k}{
+      Estimate advantages function $\hat{A}_t^{\pi_\theta}$ \\
+      Compute policy update using $\theta_{new} = arg\max_{\theta} L^{CLIP}(\theta)$ by taking $B$\\
+    }
+    Save $\theta_{new}$ to weight buffer $u$ with a $p$
+ }
+Set population $P$ by $u$, velocity $V$, inertia weight $w$, cognitive weight $c1$, social weight $c2$ \\
+Set $pbest_i$, $sbest$ by rule of PSO \\
+ \While{terminal criteria}{
+    \For{i = 1, 2, 3, ..., len($P$)}{
+      $r_1 = U(0, c1)$ \\
+      $r_2 = U(0, c2)$ \\
+      $V_i = w*v_i + r_1 * (pbest_i - P_i) + r_2 * (sbest - P_i)$ \\
+      $P_i = P_i + V_i$
+    }
+    Set $pbest_i$, $sbest$ by rule of PSO \\
+ }
+ \caption{PPOPSO}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\SetAlgoLined
+Set initial policy parameters $\theta$, clipping value $\epsilon$, update epochs $k$, save probability $p$\\
+ \While{terminal criteria}{
+  Collect set of partial trajectories $D$ on policy $\pi_\theta$ \\
+  Make a mini-batch buffer $B$ by $D$ \\
+    \For{i = 1, 2, 3, ..., k}{
+      Estimate advantages function $\hat{A}_t^{\pi_\theta}$ \\
+      Compute policy update using $\theta_{new} = arg\max_{\theta} L^{CLIP}(\theta)$ by taking $B$\\
+    }
+    Save $\theta_{new}$ to weight buffer $u$ with a $p$
+ }
+ Set population $P$ by $u$, current iteration $t = 0$, max iteration $M$ \\
+ Set $\alpha$, $\beta$, $\delta$ by rule of GWO \\
+ \While{terminal criteria}{
+  $t = t + 1$ \\
+  $a = 2 - t * ((2/M))$ \\
+    \For{i = 1, 2, 3, ..., len($P$)}{
+      \For{j = $\alpha$, $\beta$, $\delta$}{
+        $r1_j = U(0, 1)$ \\
+        $r2_j = U(0, 1)$ \\
+        $A_j = 2a * r1_j - a$ \\
+        $C_j = 2 * r2_j$ \\
+        $D_j = C_j * \alpha - P_j$ \\
+        $V_j = X_j - A_j * D_j$
+      }
+      $P_i = (V_\alpha + V_\beta + V_\delta) / 3$
+    }
+    Set $\alpha$, $\beta$, $\delta$ by rule of GWO \\
+ }
+ \caption{PPOGWO}
+\end{algorithm}
+\end{document}
